@@ -11,4 +11,7 @@ export class HomeComponent {
   onChartGenerated(data: { name: string, category: string, data: number[] }) {
     this.chartData.push(data);
   }
+  onDeleteChart() {
+    this.chartData = [];
+  }
 }

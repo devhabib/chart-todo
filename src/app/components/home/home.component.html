@@ -1,10 +1,23 @@
-<div>
-  <app-chart-form (chartData)="onChartGenerated($event)"></app-chart-form>
-  <div *ngFor="let data of chartData">
-    <app-chart-display
-      [chartName]="data.name"
-      [chartCategory]="data.category"
-      [chartData]="data.data"
-    ></app-chart-display>
-  </div>
-</div>
+<nz-layout>
+  <nz-header>
+    <div class="container-fluid">
+      <app-chart-form
+        (chartData)="onChartGenerated($event)"
+        (deleteCharts)="onDeleteChart()"
+      ></app-chart-form>
+    </div>
+  </nz-header>
+  <nz-content>
+    <div class="container-fluid">
+      <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+        <div *ngFor="let data of chartData" nz-col nzMd="12" nzSm="24">
+          <app-chart-display
+            [chartName]="data.name"
+            [chartCategory]="data.category"
+            [chartData]="data.data"
+          ></app-chart-display>
+        </div>
+      </div>
+    </div>
+  </nz-content>
+</nz-layout>

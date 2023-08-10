@@ -1,21 +1,41 @@
-<form (ngSubmit)="onSubmit()">
-  <label for="chartName">Chart Name:</label>
-  <input
-    type="text"
-    id="chartName"
-    name="chartName"
-    [(ngModel)]="chartName"
-    required
-  />
-
-  <label for="chartCategory">Chart Category:</label>
-  <select id="chartCategory" name="chartCategory" [(ngModel)]="chartCategory">
-    <option value="Bar">Bar</option>
-    <option value="Pie">Pie</option>
-    <option value="Doughnut">Doughnut</option>
-    <option value="Line">Line</option>
-  </select>
-
-  <button type="submit">Generate Chart</button>
-  <button type="button" (click)="onDeleteCharts()">Delete Charts</button>
+<form (ngSubmit)="onSubmit()" nz-form [nzLayout]="'inline'">
+  <nz-form-item>
+    <input
+      type="text"
+      id="chartName"
+      name="chartName"
+      [(ngModel)]="chartName"
+      nz-input
+      nzSize="large"
+      placeholder="Chart Name"
+    />
+  </nz-form-item>
+  <nz-form-item>
+    <nz-select
+      [(ngModel)]="chartCategory"
+      nzPlaceHolder="Chart Category"
+      name="chartCategory"
+      nzSize="large"
+    >
+      <nz-option nzValue="Bar" nzLabel="Bar"></nz-option>
+      <nz-option nzValue="Pie" nzLabel="Pie"></nz-option>
+      <nz-option nzValue="Doughnut" nzLabel="Doughnut"></nz-option>
+      <nz-option nzValue="line" nzLabel="Line"></nz-option>
+    </nz-select>
+  </nz-form-item>
+  <div class="action__btn">
+    <button nzSize="large" nz-button nzType="primary" type="submit">
+      Generate Chart
+    </button>
+    <button
+      nz-button
+      nzType="primary"
+      nzDanger
+      nzSize="large"
+      type="button"
+      (click)="onDeleteCharts()"
+    >
+      Delete Charts
+    </button>
+  </div>
 </form>

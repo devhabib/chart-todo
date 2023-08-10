@@ -16,6 +16,15 @@ import en from '@angular/common/locales/en';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzCardModule } from 'ng-zorro-antd/card';
+
+
+
 registerLocaleData(en);
 
 @NgModule({
@@ -33,6 +42,12 @@ registerLocaleData(en);
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NzLayoutModule,
+    NzFormModule,
+    NzInputModule,
+    NzSelectModule,
+    NzButtonModule,
+    NzCardModule
   ],
   providers: [AuthService, ChartService, { provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

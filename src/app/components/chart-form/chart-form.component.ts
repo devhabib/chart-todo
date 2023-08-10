@@ -23,12 +23,12 @@ export class ChartFormComponent {
     this.clearForm();
   }
 
+  onDeleteCharts() {
+    this.deleteCharts.emit();
+  }
   clearForm() {
     this.chartName = '';
     this.chartCategory = 'Bar';
-  }
-  onDeleteCharts() {
-    this.deleteCharts.emit();
   }
 
 }

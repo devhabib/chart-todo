@@ -1,4 +1,5 @@
-<div>
-  <h2>{{ chartName }}</h2>
-  <canvas #chartCanvas></canvas>
+<div class="chart-container">
+  <nz-card [nzTitle]="chartName">
+    <canvas #chartCanvas></canvas>
+  </nz-card>
 </div>
