@@ -22,6 +22,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
 
 
 
@@ -47,7 +48,8 @@ registerLocaleData(en);
     NzInputModule,
     NzSelectModule,
     NzButtonModule,
-    NzCardModule
+    NzCardModule,
+    NzNotificationModule
   ],
   providers: [AuthService, ChartService, { provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

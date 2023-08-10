@@ -16,15 +16,15 @@ export class ChartDisplayComponent implements AfterViewInit {
   ngAfterViewInit() {
     const ctx = this.chartCanvasRef.nativeElement.getContext('2d');
 
-    const chartConfig: ChartConfiguration<'bar' | 'line' | 'scatter' | 'pie' | 'doughnut', number[], string> = {
-      type: this.chartCategory.toLowerCase() as 'bar' | 'line' | 'scatter' | 'pie' | 'doughnut',
+    const chartConfig: ChartConfiguration<'bar' | 'line' | 'pie' | 'doughnut', number[], string> = {
+      type: this.chartCategory.toLowerCase() as 'bar' | 'line' | 'pie' | 'doughnut',
       data: {
-        labels: ['Label 1', 'Label 2', 'Label 3'],
+        labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5'],
         datasets: [
           {
             label: 'Dataset Label',
             data: this.chartData,
-            backgroundColor: ['red', 'green', 'blue']
+            backgroundColor: ['#96B6C5', '#ADC4CE', '#7C9D96', '#7C9D96', '#A8A196']
           }
         ]
       }

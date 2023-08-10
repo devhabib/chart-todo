@@ -1,5 +1,5 @@
 <div class="chart-container">
-  <nz-card [nzTitle]="chartName">
+  <nz-card [nzTitle]="chartName ? chartName : 'No Title'">
     <canvas #chartCanvas></canvas>
   </nz-card>
 </div>

@@ -16,7 +16,7 @@ export class ChartFormComponent {
     const data = {
       name: this.chartName,
       category: this.chartCategory,
-      data: [10, 20, 30] // Example data for the chart
+      data: [5, 18, 15, 25, 20]
     };
 
     this.chartData.emit(data);

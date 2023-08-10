@@ -1,24 +1,48 @@
-<form (submit)="login()">
-  <div>
-    <label for="username">Username:</label>
-    <input
-      type="text"
-      name="username"
-      id="username"
-      [(ngModel)]="username"
-      required
-    />
+<div class="login">
+  <div class="login__container">
+    <h2>Log in</h2>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+    <form (submit)="login()" class="form" nz-form>
+      <div class="login__single">
+        <nz-input-group
+          nzPrefixIcon="user"
+          [ngClass]="errorMessage ? 'error' : ''"
+        >
+          <input
+            nz-input
+            nzSize="large"
+            type="text"
+            name="username"
+            id="username"
+            [(ngModel)]="username"
+            placeholder="Username"
+            required
+          />
+        </nz-input-group>
+        <nz-input-group nzPrefixIcon="lock">
+          <input
+            type="password"
+            nzSize="large"
+            name="password"
+            id="password"
+            [(ngModel)]="password"
+            required
+            nz-input
+            nzSize="large"
+          />
+        </nz-input-group>
+      </div>
+
+      <button
+        nz-button
+        nzType="primary"
+        nzSize="large"
+        type="submit"
+        (click)="login()"
+      >
+        Login
+      </button>
+    </form>
   </div>
-  <div>
-    <label for="password">Password:</label>
-    <input
-      type="password"
-      name="password"
-      id="password"
-      [(ngModel)]="password"
-      required
-    />
-  </div>
-  <button type="submit" (click)="login()">Login</button>
-  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
-</form>
+</div>
