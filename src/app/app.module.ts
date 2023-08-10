@@ -9,6 +9,14 @@ import { ChartDisplayComponent } from './components/chart-display/chart-display.
 import { AuthService } from './services/auth.service';
 import { ChartService } from './services/chart.service';
 import { HomeComponent } from './components/home/home.component';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_US } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+registerLocaleData(en);
 
 @NgModule({
   declarations: [
@@ -23,8 +31,10 @@ import { HomeComponent } from './components/home/home.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
   ],
-  providers: [AuthService, ChartService],
+  providers: [AuthService, ChartService, { provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
