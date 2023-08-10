@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  chartData: Array<{ name: string, category: string, data: number[] }> = [];
 
+  onChartGenerated(data: { name: string, category: string, data: number[] }) {
+    this.chartData.push(data);
+  }
 }

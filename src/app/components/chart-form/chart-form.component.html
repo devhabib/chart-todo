@@ -1,1 +1,21 @@
-<p>chart-form works!</p>
+<form (ngSubmit)="onSubmit()">
+  <label for="chartName">Chart Name:</label>
+  <input
+    type="text"
+    id="chartName"
+    name="chartName"
+    [(ngModel)]="chartName"
+    required
+  />
+
+  <label for="chartCategory">Chart Category:</label>
+  <select id="chartCategory" name="chartCategory" [(ngModel)]="chartCategory">
+    <option value="Bar">Bar</option>
+    <option value="Pie">Pie</option>
+    <option value="Doughnut">Doughnut</option>
+    <option value="Line">Line</option>
+  </select>
+
+  <button type="submit">Generate Chart</button>
+  <button type="button" (click)="onDeleteCharts()">Delete Charts</button>
+</form>
